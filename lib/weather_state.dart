@@ -1,4 +1,4 @@
-part of 'weather_cubit.dart';
+part of 'weather_bloc.dart';
 
 
 @immutable
@@ -43,3 +43,6 @@ class WeatherError extends WeatherState {
   @override
   int get hashCode => message.hashCode;
 }
+
+
+
