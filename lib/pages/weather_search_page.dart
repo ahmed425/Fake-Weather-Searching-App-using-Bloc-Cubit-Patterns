@@ -77,7 +77,7 @@ Widget buildLoading() {
 
 Column buildColumnWithData(Weather weather) {
   return Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: <Widget>[
       Text(
         weather.cityName,
