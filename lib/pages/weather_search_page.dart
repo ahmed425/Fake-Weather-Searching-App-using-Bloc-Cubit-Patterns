@@ -16,7 +16,8 @@ class WeatherSearchPage extends StatelessWidget {
         child: BlocConsumer<WeatherBloc, WeatherState>(
           listener: (context, state) {
             if (state is WeatherError) {
-              Scaffold.of(context).showSnackBar(
+
+              ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(state.message),
                 ),
@@ -65,8 +66,7 @@ class CityInputField extends StatelessWidget {
   }
 
   void submitCityName(BuildContext context, String cityName) {
-    final weatherBloc = context.bloc<WeatherBloc>();
-    weatherBloc.add(GetWeather(cityName));
+    context.read<WeatherBloc>().add(GetWeather(cityName));
   }
 }
 Widget buildLoading() {
