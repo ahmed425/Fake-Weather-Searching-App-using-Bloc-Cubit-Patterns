@@ -14,9 +14,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   WeatherBloc(this._weatherRepository) : super(WeatherInitial());
 
   @override
-  Stream<WeatherState> mapEventToState(
-      WeatherEvent event,
-      ) async* {
+  Stream<WeatherState> mapEventToState(WeatherEvent event) async* {
     if (event is GetWeather) {
       try {
         yield WeatherLoading();
